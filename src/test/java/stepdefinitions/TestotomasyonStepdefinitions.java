@@ -97,10 +97,11 @@ public class TestotomasyonStepdefinitions {
     }
     @Then("Basarili kayit yapildigini test eder")
     public void basarili_kayit_yapildigini_test_eder() {
+        ReusableMethods.bekle(2);
         testOtomasyonuPage.loginSayfasıEmailButonu.sendKeys(fakeEmail);
         testOtomasyonuPage.loginSayfasıPassButonu.sendKeys(fakePass);
         testOtomasyonuPage.loginSayfasıSigninButonu.click();
-
+        ReusableMethods.bekle(2);
         Assert.assertTrue(testOtomasyonuPage.profilYazıElementi.isDisplayed());
     }
 
@@ -118,6 +119,7 @@ public class TestotomasyonStepdefinitions {
     }
     @Then("Kayit yapılamadıgını test eder")
     public void kayit_yapılamadıgını_test_eder() {
+        ReusableMethods.bekle(2);
       Assert.assertTrue(testOtomasyonuPage.loginSayfasıEmailButonu.isDisplayed());
     }
 
